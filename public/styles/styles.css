@@ -1,3 +1,17 @@
 .list-group-item {
   line-height: 2.5;
 }
+.jumbotron {
+  background-image: linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.3),
+    rgba(255, 255, 255, 0.3)
+  ),
+  url("cats_n_dogs.jpg");
+background-size: cover;
+min-height: 40vh;
+position: relative;
+}
+body {
+  background: grey;
+}
