@@ -9,7 +9,8 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="../public/styles/styles.css">
-    </head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  </head>
 
 <body>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -31,7 +32,6 @@
       <li class="nav-item">
             <a class="nav-link" href="#">Link</a>
       </li>
-
 
       <li class="nav-item dropdown">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -61,34 +61,85 @@
   </nav>
 
 <div class="container">
+  <div class="spacer1"></div>
   <div class="jumbotron text-center" id = "jumbo">
-    <h1 class="display-4">Company Name</h1>
-    <h3 class="slogan">Our slogan goes here</h3>
+    <h1 class="display-4 title">Claws N' Paws Pet Sitters</h1>
+    <h3 class="slogan">We love cats & dogs as much as you do</h3>
     <p class="lead">Our mission? / optional</p>
-    <hr class="my-4">
+    <!-- <hr class="my-4"> -->
     <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
   </div> <!-- close Jumbo-->
 
+  <div class = "row">
+    <div class = "col-lg-6">
+      <div class = "card" style = "width: 35rem;">
+      <img src = "..." class = "card-img-top" alt ="...">
+      <h4 class="card-title text-center">Book with Sitters you can trust</h4>
+      <div class = "card-body">
+          
+          <p class ="card-text">Certified with background checks</p>
+          <p class ="card-text">Detailed profiles with personal information of sitters</p>
+          <p class ="card-text">Personal attention and respect for your pet</p>
+          <a href="#" class="btn btn-primary text-center">Book your sitter</a>
+        </div> <!-- close card-body - right side-->
+      </div>  <!-- close card - right side-->
+    </div>  <!-- close col-lg-6-->
 
   <div class = "col-lg-6">
+      <div class = "card right-panel" style = "width: 33.75rem;">
+          <div class = "card-body">
+              <h4 class="card-title text-center">Enter your preferences</h4>
+              <br>
+              <h5 class="services">I am looking for services for my</h3>  
+
+                <form action="/api/sitters/">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="dogs" id="dogs" value="1">
+                  <label class="form-check-label" for="dogs">Dog</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="cats" id="cats" value="1">
+                  <label class="form-check-label" for="cats">Cat</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="both" id="both" value="1">
+                  <label class="form-check-label" for="both">Dogs & Cats</label>
+                </div>
+                
+
+                <br><br>
+                <!-- <div class="form-row col-md-2"> -->
+                <div class="form-check-inline">
+                  <label for="zip">Enter your Zipcode</label>
+                  <input type="text" class="form-control zip"  id="zip">
+                <div class = "text-center">
+                  <button type="submit"  class="btn btn-primary">Submit</button>
+                </div> 
+              </form>  
+              </div>
+            </div>
+      </div>
+    </div>
   </div>
 
-  <div class = "col-lg-6">
-    <div class = "card" style = "width: 18rem;">
-      <img src = "..." class = "card-img-top" alt ="...">
-      <div class = "card-body">
-        <h4 class="card-title">Book with Sitters you can trust</h4>
-        <p class ="card-text">Certified with background checks</p>
-        <p class ="card-text">Detailed profiles with personal information of sitters</p>
-        <p class ="card-text">Personal attention and respect for your pet</p>
-        <a href="#" class="btn btn-primary">Book your sitter</a>
-      </div> <!-- close card-body - right side-->
-    </div>  <!-- close card - right side-->
-  </div>  <!-- close col-lg-6-->
-
-
   </div>  <!-- close container div -->
+  <div class = "spacer2">
 
+  </div>
+
+
+  <footer class="footer mt-auto py-3">
+      <div class="container">
+        <div class="text-center">  
+          <span class="text muted">Copyright &copy; 2019</span>
+        </div>
+      </div>
+    </footer>
+  <!-- <footer>
+      <div class="container">
+        Copyright &copy; 
+      </div>
+    </footer> -->
     
 </body>
 </html>
