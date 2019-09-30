@@ -1,6 +1,7 @@
 // Get references to page elements
 var $exampleText = $("#example-text");
 var $exampleDescription = $("#example-description");
+var $phone = $("#phone");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -66,11 +67,12 @@ var handleFormSubmit = function(event) {
 
   var example = {
     text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    zip: $exampleDescription.val().trim(),
+    phone: $phone.val().trim()
   };
 
-  if (!(example.text && example.description)) {
-    alert("You must enter an example text and description!");
+  if (!(example.text && example.zip && example.phone)) {
+    alert("You must enter a pet type, zip code and phone number");
     return;
   }
 
@@ -80,6 +82,7 @@ var handleFormSubmit = function(event) {
 
   $exampleText.val("");
   $exampleDescription.val("");
+  $phone.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
