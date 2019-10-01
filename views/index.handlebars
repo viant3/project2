@@ -1,25 +1,69 @@
+<div class="container">
+  <div class="spacer1"></div>
+  <div class="jumbotron text-center" id="jumbo">
+    <h1 class="display-4 title">Claws N' Paws Pet Sitters</h1>
+    <h3 class="slogan">We love cats & dogs as much as you do</h3>
+    <p class="lead">Our mission? / optional</p>
+    <!-- <hr class="my-4"> -->
+    <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a> -->
+  </div> <!-- close Jumbo-->
+
+ 
+
+    <form class="clearfix mb-4" action="POST">
+    <div class="col-lg-6">
+      <div class="card right-panel" style="height: 20rem; width: 33.75rem;">
+        <div class="card-body">
+          <h4 class="card-title text-center">Enter your preferences</h4>
+          <br>
+      
+            <div class="form-group">
+              <label for="example-text">I am looking for services for my</label>
+              <input type="text"  id="example-text" class="form-control" aria-describedby="example-text"
+                placeholder="Pet Type">
+            </div>
+            <div class="form-group">
+              <div class="row">
+                <div class="col-4">
+              <input type="text" class="form-control" id="example-description" aria-describedby="example-description" placeholder="ZIP">
+              </div>
+              <div class="col-2"></div>
+              <div class="col-6">
+              <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="Phone Number">
+           </div>
+            </div>
+            </div>
+            <button id="submit" class="btn btn-primary float-right">Submit</button>
+          </form>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> <!-- close container div -->
+<div class="spacer2">
+
+</div>
+
+
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <div class="text-center">
+      <span class="text muted">Copyright &copy; 2019</span>
+    </div>
+  </div>
+</footer>
+
 <div id="home">
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
-        </form>
-        <h3>Examples:</h3>
+
         <ul id="example-list" class="list-group">
           {{#each examples}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
+            <a href="example/{{this.id}}">{{this.type}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}

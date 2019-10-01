@@ -20,6 +20,14 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/profiles/", function(req, res) {
+    db.Example.findAll({}).then(function(dbExample) {
+      res.render("profiles", {
+        example: dbExample
+      });
+    });
+  });
+
   // Render 404 page for any unmatched routes
   app.get("*", function(req, res) {
     res.render("404");
