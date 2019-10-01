@@ -4,10 +4,10 @@
       <div class="col-8 offset-2">
 
         <ul id="example-list" class="list-group">
-      
+      <h2>You're on the list!</h2>
           {{#each example}}
           <li data-id="{{this.id}}" class="list-group-item">
-         {{this.type}} {{this.description}}
+         {{this.name}}    {{this.petType}}     {{this.phone}}   {{this.zip}}
           </li>
           {{/each}}
         
@@ -16,6 +16,8 @@
     </div>
   </div>
 </div>
-
+<center>
+<a href="/profiles">Click here to view available pet sitters</a>
+</center>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="/js/index.js"></script>

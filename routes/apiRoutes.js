@@ -8,8 +8,14 @@ module.exports = function(app) {
     });
   });
 
+  app.get("/api/profiles", function(req, res) {
+    db.Sitters.findAll({}).then(function(dbExamples) {
+      res.json(dbExamples);
+    });
+  });
+
   // Create a new example
-  app.post("/api/examples", function(req, res) {
+  app.post("/api/profiles", function(req, res) {
     db.Example.create(req.body).then(function(dbExample) {
       res.json(dbExample);
     });

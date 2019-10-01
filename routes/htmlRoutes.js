@@ -20,10 +20,20 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/profiles/", function(req, res) {
+  app.get("/customer", function(req, res) {
     db.Example.findAll({}).then(function(dbExample) {
-      res.render("profiles", {
+      res.render("customers", {
         example: dbExample
+      });
+    });
+  });
+
+
+
+  app.get("/profiles", function(req, res) {
+    db.Sitters.findAll({}).then(function(dbSitters) {
+      res.render("profiles", {
+        sitters: dbSitters
       });
     });
   });
