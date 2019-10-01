@@ -1,5 +1,5 @@
 // Get references to page elements
-var $exampleText = $("#example-text");
+var $exampleType = $("#example-text");
 var $exampleDescription = $("#example-description");
 var $phone = $("#phone");
 var $submitBtn = $("#submit");
@@ -36,8 +36,8 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.text)
-        .attr("href", "/example/" + example.id);
+        .text(example.type)
+        .attr("href", "/profiles/");
 
       var $li = $("<li>")
         .attr({
@@ -46,11 +46,11 @@ var refreshExamples = function() {
         })
         .append($a);
 
-      var $button = $("<button>")
-        .addClass("btn btn-danger float-right delete")
-        .text("ｘ");
+      // var $button = $("<button>")
+      //   .addClass("btn btn-danger float-right delete")
+      //   .text("ｘ");
 
-      $li.append($button);
+      // $li.append($button);
 
       return $li;
     });
@@ -66,12 +66,12 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
+    type: $exampleType.val().trim(),
     zip: $exampleDescription.val().trim(),
     phone: $phone.val().trim()
   };
 
-  if (!(example.text && example.zip && example.phone)) {
+  if (!(example.type && example.zip && example.phone)) {
     alert("You must enter a pet type, zip code and phone number");
     return;
   }
@@ -80,7 +80,7 @@ var handleFormSubmit = function(event) {
     refreshExamples();
   });
 
-  $exampleText.val("");
+  $exampleType.val("");
   $exampleDescription.val("");
   $phone.val("");
 };

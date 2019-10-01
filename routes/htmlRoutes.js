@@ -20,9 +20,9 @@ module.exports = function(app) {
     });
   });
 
-  app.get("/example/", function(req, res) {
+  app.get("/profiles/", function(req, res) {
     db.Example.findAll({}).then(function(dbExample) {
-      res.render("example", {
+      res.render("profiles", {
         example: dbExample
       });
     });
