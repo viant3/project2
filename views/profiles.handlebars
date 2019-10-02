@@ -95,9 +95,9 @@
           <div class="card-body">
             <h5 class="card-title">Our Sitters</h5>
 
-             {{#each example}}
+             {{#each sitters}}
           <li data-id="{{this.id}}" class="list-group-item">
-         {{this.type}} {{this.description}}
+         {{this.name}}    {{this.zip}}    {{this.email}}    
           </li>
           {{/each}}
           </div>

@@ -1,7 +1,8 @@
 // Get references to page elements
-var $exampleType = $("#example-text");
-var $exampleDescription = $("#example-description");
+var $petType = $("#petType");
+var $zip = $("#zip");
 var $phone = $("#phone");
+var $name = $("#name");
 var $submitBtn = $("#submit");
 var $exampleList = $("#example-list");
 
@@ -13,13 +14,19 @@ var API = {
         "Content-Type": "application/json"
       },
       type: "POST",
-      url: "api/examples",
+      url: "api/profiles",
       data: JSON.stringify(example)
     });
   },
   getExamples: function() {
     return $.ajax({
       url: "api/examples",
+      type: "GET"
+    });
+  },
+  getSitters: function() {
+    return $.ajax({
+      url: "api/profiles",
       type: "GET"
     });
   },
@@ -36,8 +43,8 @@ var refreshExamples = function() {
   API.getExamples().then(function(data) {
     var $examples = data.map(function(example) {
       var $a = $("<a>")
-        .text(example.type)
-        .attr("href", "/profiles/");
+        .text(example.petType)
+        .attr("href", "profiles");
 
       var $li = $("<li>")
         .attr({
@@ -46,11 +53,11 @@ var refreshExamples = function() {
         })
         .append($a);
 
-      // var $button = $("<button>")
-      //   .addClass("btn btn-danger float-right delete")
-      //   .text("ｘ");
+      var $button = $("<button>")
+        .addClass("btn btn-danger float-right delete")
+        .text("ｘ");
 
-      // $li.append($button);
+      $li.append($button);
 
       return $li;
     });
@@ -66,12 +73,13 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    type: $exampleType.val().trim(),
-    zip: $exampleDescription.val().trim(),
-    phone: $phone.val().trim()
+    petType: $petType.val().trim(),
+    zip: $zip.val().trim(),
+    phone: $phone.val().trim(),
+    name: $name.val().trim()
   };
 
-  if (!(example.type && example.zip && example.phone)) {
+  if (!(example.petType && example.zip && example.phone && example.name)) {
     alert("You must enter a pet type, zip code and phone number");
     return;
   }
@@ -79,10 +87,11 @@ var handleFormSubmit = function(event) {
   API.saveExample(example).then(function() {
     refreshExamples();
   });
-
-  $exampleType.val("");
-  $exampleDescription.val("");
+  location = "/customer";
+  $petType.val("");
+  $zip.val("");
   $phone.val("");
+  $name.val("");
 };
 
 // handleDeleteBtnClick is called when an example's delete button is clicked
